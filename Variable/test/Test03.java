@@ -33,11 +33,11 @@ public class Test03 {
 //
 //		3 + 5 = 8
 		
-//	2	System.out.println("두 수를 입력 하세요.");
-//		int number1 = sc.nextInt();
-//		int number2 = sc.nextInt();
-//		int plus = number1 + number2;
-//		System.out.println(number1 + " + " + number2 +  " = "  + plus);
+		System.out.println("두 수를 입력 하세요.");
+		int number1 = sc.nextInt();
+		int number2 = sc.nextInt();
+		int plus = number1 + number2;
+		System.out.println(number1 + " + " + number2 +  " = "  + plus);
 		
 		
 //		3. 입력과 빼기
@@ -50,12 +50,12 @@ public class Test03 {
 //
 //		3 - 5 = -2;
 		
-//	3	System.out.println("두 수를 입력 하세요.");
-//		int number3 = sc.nextInt();
-//		int number4 = sc.nextInt();
-//		int minus = number1 - number2;
-//		System.out.println(number1 + " + " + number2 +  " = "  + minus);
-//		
+ 		System.out.println("두 수를 입력 하세요.");
+		int number3 = sc.nextInt();
+		int number4 = sc.nextInt();
+		int minus = number1 - number2;
+		System.out.println(number1 + " + " + number2 +  " = "  + minus);
+		
 		
 		
 //		4. 구구단
@@ -72,13 +72,13 @@ public class Test03 {
 //		5 X 5 = 25
 		
 		
-//	4	System.out.println("단수를 입력 하세요 : ");
-//		int gugudan = sc.nextInt();
-//		System.out.println(gugudan + " X " + 1 + " = " + gugudan * 1);
-//		System.out.println(gugudan + " X " + 2 + " = " + gugudan * 2);
-//		System.out.println(gugudan + " X " + 3 + " = " + gugudan * 3);
-//		System.out.println(gugudan + " X " + 4 + " = " + gugudan * 4);
-//		System.out.println(gugudan + " X " + 5 + " = " + gugudan * 5);
+		System.out.println("단수를 입력 하세요 : ");
+		int gugudan = sc.nextInt();
+		System.out.println(gugudan + " X " + 1 + " = " + gugudan * 1);
+		System.out.println(gugudan + " X " + 2 + " = " + gugudan * 2);
+		System.out.println(gugudan + " X " + 3 + " = " + gugudan * 3);
+		System.out.println(gugudan + " X " + 4 + " = " + gugudan * 4);
+		System.out.println(gugudan + " X " + 5 + " = " + gugudan * 5);
 		
 		
 //		5. 원 넓이 구하기
