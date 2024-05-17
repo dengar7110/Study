@@ -17,10 +17,10 @@ public class Test03 {
 //		이름 : 김인규 나이 : 24
 		
 		Scanner sc = new Scanner(System.in);
-//		System.out.println("나이를 입력하세요");
-//		int age = sc.nextInt();	
-//		System.out.println("이름 : 홍정원 나이 : " + age);
-//		
+		System.out.println("나이를 입력하세요");
+		int age = sc.nextInt();	
+		System.out.println("이름 : 홍정원 나이 : " + age);
+		
 		
 		
 //		2. 입력과 더하기
