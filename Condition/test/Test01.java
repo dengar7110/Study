@@ -40,12 +40,15 @@ public class Test01 {
 		System.out.print("두 개의 수를 입력하세요 : ");
 		int a = sc.nextInt();
 		int b = sc.nextInt();
+		
 		if(a > b) {
 			System.out.println(">");
 		}
+		
 		if(a < b) {
 			System.out.println("<");
 		}
+		
 		if(a == b) {
 			System.out.println("==");
 		}
@@ -64,9 +67,11 @@ public class Test01 {
 		System.out.println("70점 이상이면 합격하는 시험에서 점수를 입력 받아서 합격 여부를 출력하세요.");
 		System.out.print("성적을 입력하세요 : ");
 		int score = sc.nextInt();
+		
 		if(score >= 70) {
 			System.out.println("합격 입니다.");
 		}
+		
 		if(score < 70) {
 			System.out.println("불합격 입니다.");
 		}
@@ -84,9 +89,11 @@ public class Test01 {
 		System.out.println("수를 입력 받아서 짝수 인지 홀수 인지 출력하세요.");
 		System.out.print("수를 입력하세요 : ");
 		number = sc.nextInt();
+		
 		if(number % 2 == 0 ) {
 			System.out.println("짝수");
 		}
+		
 		if(number % 2 != 0 ) {
 			System.out.println("홀수");
 		}
