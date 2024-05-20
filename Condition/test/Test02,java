@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Test02 {
 
 	public static void main(String[] args) {
+
 //		1. 두 점수 합격
 //		두 개의 점수를 입력 받아서 두 점수 모두가 70점이 이상이면 합격입니다 를 출력하세요
 //		입력 예시
