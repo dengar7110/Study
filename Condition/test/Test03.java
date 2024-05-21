@@ -25,6 +25,8 @@ public class Test03 {
 			System.out.println("양수");
 		}else if(number < 0) {
 			System.out.println("음수");
+		}else {
+			System.out.println("0");
 		}
 		
 		
