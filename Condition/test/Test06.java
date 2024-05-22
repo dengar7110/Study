@@ -37,8 +37,7 @@ public class Test06 {
 		}else{
 			System.out.println("합격");
 		}
-		
-			
+
 		
 		
 //		2. 윤년 구하기
@@ -61,8 +60,45 @@ public class Test06 {
 		if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ) {
 			System.out.println("윤년");
 		}else {
-			System.out.println("윤년이 아닙니다.");
+			System.out.println("평년");
 		}
+
+		// 선생님 풀이
+		if(year % 4 == 0) {
+			if(year % 100 == 0) {
+				if(year % 400 ==0) {
+					System.out.println("윤년");
+				}else {
+					System.out.println("평년");
+				}
+
+			}else {
+				System.out.println("윤년");
+			}
+		}else {
+			System.out.println("평년");
+		}
+
+		// 또 다른 풀이
+		if(year % 400 == 0) {
+			System.out.println("윤년");
+		}else if(year % 100 == 0) {
+			System.out.println("평년");
+		}else if(year % 4 == 0) {
+			System.out.println("윤년");
+		}else {
+			System.out.println("평년");
+		}
+		
+		// 또 다른 풀이 
+		// 4로 나누어 떨어지는 연동 중에 100으로 나누어 떨어지는 연도를 제외한 나머지
+		// 4로 나누어 떨어지고, 100으로 나누어 떨어지지 않는 연도
+		if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+			System.out.println("윤년");
+		}else {
+			System.out.println("평년");
+		}
+		
 		
 		
 //		3. 가위 바위 보 게임
@@ -90,6 +126,8 @@ public class Test06 {
 			System.out.println("철수가 이겼다");
 		}
 		
+		
+		
 //		4. 45분전
 //		시간(hour)과 분(min)이 주어질 때, 해당 시간보다 45분전의 시간을 계산하여 출력하세요
 //		시간은 24시간 표현방법을 사용한다
@@ -114,6 +152,8 @@ public class Test06 {
 			minute = 45 - minute;
 		}
 		System.out.println(hour + "시" + minute + "분");
+		
+		
 		
 //		5. 윷놀이
 //		4개의 윷 상태가 입력되면 도, 개, 걸, 윷, 모를 출력하는 프로그램을 작성하시오.
