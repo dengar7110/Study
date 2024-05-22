@@ -80,6 +80,8 @@ public class Test05 {
 		
 		if(average >= 70) {
 			System.out.println("합격입니다.");
+		}else {
+			System.out.println("불합격입니다.");
 		}
 		
 		
@@ -106,7 +108,39 @@ public class Test05 {
 			max = number3;
 		}
 		System.out.println("가장 큰값은 : " + max);
-				
+		
+		// 선생님 풀이
+		if(number1 > number2 && number1 > number3) {
+			System.out.println(number1);
+		}else if(number2 > number1 && number2 > number3) {
+			System.out.println(number2);
+		}else {
+			System.out.println(number3);
+		}
+		
+		
+		System.out.println("세 수를 입력하세요 : ");
+		number1 = sc.nextInt();
+		number2 = sc.nextInt();
+		number3 = sc.nextInt();
+		
+		// 역도 경기
+		// 최고기록 : 130
+		// 100 120 110 130 120
+		
+		// max 알고리즘
+		max = number1;
+		
+		if(number1 > max) {
+			max = number1;
+		}
+		if(number2 > max){
+			max = number2; 
+		}
+		if(number3 > max) {
+			max = number3;
+		}
+		System.out.println("최대값은 max : " + max);
 		
 		
 //		5. 계절 구하기
