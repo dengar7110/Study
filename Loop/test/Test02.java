@@ -114,7 +114,7 @@ public class Test02 {
 		for(int i = 1; i <= 5; i++) {
 			System.out.print("수를 입력하세요 : " );
 			int number = sc.nextInt();
-				if(number >= max) {
+				if(number > max) {
 					max = number;
 				}
 			
