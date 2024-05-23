@@ -13,6 +13,8 @@ public class Test04 {
 //		출력 예시
 //
 //		합 : 1035
+		
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("수를 입력 받아서 1부터 입력 받은 수까지의 합을 출력하세요.");
@@ -106,13 +108,13 @@ public class Test04 {
 //		최소값은 -4입니다.
 		
 		System.out.println("반복문으로 5개의 수를 입력 받아서 최소 값을 출력하세요.");
-
-		int min = 1;
-		for(int i = 1; i <= 5; i++) {
+		System.out.print("1번째 수를 입력하세요 : ");
+		
+		int min = sc.nextInt();
+		for(int i = 2; i <= 5; i++) {
 			System.out.print(i + "번째 수를 입력하세요 : ");
 			number = sc.nextInt();
-			min = number;
-			if(min > number ) {
+			if( min > number ) {
 				min = number;
 			}
 		}
@@ -129,6 +131,18 @@ public class Test04 {
 //
 //		1 2 3 4 6 8 12 24
 
+		System.out.println("수를 입력 받아서 그 수의 약수를 모두 출력하세요.");
+		System.out.print("수를 입력하세요 : ");
+		number = sc.nextInt();
+		
+		for(int i = 1; i <= number; i++) {
+			if(number % i == 0) {
+				System.out.print(i + " ");
+			}
+		}
+		
+		
+		
 	}
 
 }
