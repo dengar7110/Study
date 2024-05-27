@@ -16,6 +16,15 @@ public class Test02 {
 		number1 = sc.nextInt();
 		boolean a = primeDiscrimination(number1);
 		System.out.println(a);
+		
+		// boolean 타입의 내장함수 사용법
+		if(primeDiscrimination(number1)) {
+			System.out.println("소수입니다.");
+		}else {
+			System.out.println("소수가 아닙니다.");
+		}
+		
+		
 	}
 	
 //	1. 합 구하기
@@ -56,7 +65,6 @@ public class Test02 {
 //	false
 	
 	public static boolean primeDiscrimination(int number) {
-		//2부터~ number의 제곱근까지 확인
 		for(int i = 2; i <= Math.sqrt(number); i++) {
 			if(number % i == 0) {
 				return false;
