@@ -64,9 +64,9 @@ public class Test01 {
 	
 	public static double getAverage(int score1, int score2, int score3, int score4) {
 		int total = score1 + score2 + score3 + score4;
-		double result = total / 4.0;
+		double average = total / 4.0;
 		
-		return result;
+		return average;
 	}
 	
 //	3. 몫과 나머지 출력 함수
