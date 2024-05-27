@@ -56,7 +56,8 @@ public class Test02 {
 //	false
 	
 	public static boolean primeDiscrimination(int number) {
-		for(int i = 1; i <= Math.sqrt(number); i++) {
+		//2부터~ number의 제곱근까지 확인
+		for(int i = 2; i <= Math.sqrt(number); i++) {
 			if(number % i == 0) {
 				return false;
 			}
