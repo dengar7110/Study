@@ -103,6 +103,11 @@ public class Test01 {
 			return 0;
 		}
 		return 1;
+		
+//		삼항연산자 표현
+//		return number1 % 2 == 0 ? 0 : 1;
+	
+		
 	}
 	
 }
