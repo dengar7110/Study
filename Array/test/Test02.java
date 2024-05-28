@@ -113,11 +113,12 @@ public class Test02 {
 			if(input % 2 == 0) {
 				loop[count] = input;
 				count++;
-				if(count ==5) {
+				if(count == loop.length) {
 					break;
 				}
 			}
 		}
+		
 		for(int i = 0; i < loop.length; i++) {
 			System.out.print(loop[i] +" ");
 		}
