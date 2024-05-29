@@ -13,6 +13,7 @@ public class Test01 {
 		    {65, 63, 57, 87, 88, 92, 78, 85, 100, 68},
 		    {45, 50, 48, 63, 67, 58, 40, 66, 47, 64}
 		};
+		
 //		1. 학생 별 평균 구하기
 //		각 학생의 평균을 각각 구해서 출력하세요.
 //		출력
@@ -23,18 +24,16 @@ public class Test01 {
 //		4번째 학생의 평균 : 78.3
 //		5번째 학생의 평균 : 54.8
 		
-		System.out.println("각 학생의 평균을 각각 구해서 출력하세요.");
-		
-		for(int i = 0; i < scores.length; i++) {
-			int sum = 0;
+		for(int i = 0; i< scores.length; i++) {
+			int total = 0;
 			for(int j = 0; j < scores[i].length; j++) {
-				sum += scores[i][j];
-				
-			}
-			double average = sum / (double)scores[i].length;
-			System.out.println((i + 1) + "번째 학생의 평균 : " + average);
+				total += scores[i][j];
+			}		
+			double average = total / scores[i].length;
+			System.out.println((i + 1) + "번째 학생의 평균 : " +  average);
+			
 		}
-		
+
 		
 //		2. 학생 별 최고점 구하기
 //		각 학생의 최고 점수를 구해서 출력하세요.
@@ -46,15 +45,14 @@ public class Test01 {
 //		4번째 학생의 최고점 : 100
 //		5번째 학생의 최고점 : 67
 		
-		System.out.println("각 학생의 최고 점수를 구해서 출력하세요.");
-		
 		for(int i = 0; i < scores.length; i++) {
 			int max = 0;
 			for(int j = 0; j < scores[i].length; j++) {
-				if(max < scores[i][j]) {
+				if(scores[i][j] > max) {
 					max = scores[i][j];
 				}
 			}
+			
 			System.out.println((i + 1) + "번째 학생의 최고점 : " + max);
 		}
 		
@@ -68,27 +66,25 @@ public class Test01 {
 		
 		System.out.println("평균이 가장 높은 학생의 평균점수와 몇 번째 학생인지 출력하세요.");
 		
-		int index = 0;
-		int sumMax = 0;
-		double average = 0;
+		double maxAverage = 0;
+		int maxIndex = 0;
 		
-			for(int i = 0; i < scores.length; i++ ) {
-			
+		for(int i = 0; i < scores.length; i++) {
 			int sum = 0;
-			
 			for(int j = 0; j < scores[i].length; j++) {
 				sum += scores[i][j];
-				if(sumMax < sum) {
-					sumMax = sum;
-					average = sumMax / (double) scores[i].length;
-					index = (i + 1);
-				}
+			}
+			double average = sum / (double)scores[i].length;
+			
+			if(maxAverage < average) {
+				maxAverage = average;
+				maxIndex = (i + 1);
 			}
 			
 		}
 		
-		System.out.println("평균이 가장 높은 학생 : " + index + "번째 학생");
-		System.out.println("평균 : " + average);
+		System.out.println("평균이 가장 높은 학생 : " + maxIndex + "번째 학생");
+		System.out.println("평균 : " + maxAverage);
 		
 //		4. 특정 과목 최고점
 //		index 4 과목의 최고 성적의 학생이 몇 번째 학생인지 출력하세요.
@@ -99,19 +95,22 @@ public class Test01 {
 		
 		System.out.println("index 4 과목의 최고 성적의 학생이 몇 번째 학생인지 출력하세요.");
 		
-		index = 0;
-		int index4 = 4;
-		int max = 0;
+		int maxScore = 0;
+		maxIndex = 0;
+		
 		for(int i = 0; i < scores.length; i++) {
-			for(int j = 0; j < scores[i].length; j++) {
-				if(scores[i][index4] > max) {
-					max = scores[i][index4];
-					index = i + 1;
-				}
+//			for(int j = 0; j < scores[i].length; j++) {
+//				필요 x
+//			}
+			if(maxScore < scores[i][4]) {
+				maxScore = scores[i][4];
+				maxIndex = (i + 1) ;
 			}
 		}
-		System.out.println("index 4 과목의 최고 성적자는 " + index + "번째 학생 ");
-		System.out.println("점수 : " + max);
+		
+		System.out.println("index 4 과목의 최고 성적자는 " + maxIndex + "번째 학생");
+		System.out.println("점수 : " + maxScore);
+		
 		
 //		5. 일부 평균 최고점
 //		시험과목 index 3 ~ 7 의 평균이 가장 높은 학생의 index를 구하여 출력하세요.
@@ -122,27 +121,26 @@ public class Test01 {
 		
 		System.out.println("시험과목 index 3 ~ 7 의 평균이 가장 높은 학생의 index를 구하여 출력하세요.");
 		
-		sumMax = 0; // 평균합의 최고점
-		index = 0;
+		maxAverage = 0;
+		maxIndex = 0;
 
-		double maxaverage = 0;
 		for(int i = 0; i < scores.length; i++) {
 			int sum = 0;
-
 			for(int j = 3; j <= 7; j++) {
 				sum += scores[i][j];
 			}
-			if(sumMax < sum) {
-				sumMax = sum;
-				index = i;
-				average = sumMax / 5.0;
-				maxaverage = average;
+			double average = sum / (double)(7 - 3 + 1);
+			if(maxAverage < average) {
+				maxAverage = average;
+				maxIndex = i;
 			}
-				
 			
 		}
-		System.out.println("평균이 가장 높은 학생 : " + index + "번 index");
-		System.out.println("평균 : " + maxaverage);
+		
+		System.out.println("평균이 가장 높은 학생 : " + maxIndex + "번 index");
+		System.out.println("평균 : " + maxAverage);
+		
+		
 		
 	}
 
