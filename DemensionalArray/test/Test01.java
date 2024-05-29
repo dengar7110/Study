@@ -1,6 +1,6 @@
 package test;
 
-public class Test03 {
+public class Test01 {
 
 	public static void main(String[] args) {
 //		아래 배열은 5명의 10과목 시험 성적을 정리해놓은 것이다.
