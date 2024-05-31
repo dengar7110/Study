@@ -86,20 +86,31 @@ public class Test04 {
 
 		System.out.println("회원 명부가 아래와 같이 문자열이 저장 되어 있다. 같은 이름이 몇 개 인지 출력하세요.");
 		
-		String a = ":";
-		String [] members = membersString.split(a);
+		String colon = ":";
+		String [] members = membersString.split(colon);
 		
 		count = 0;
+
 		for(int i = 0; i < members.length; i++) {
-			for(int j = i + 1; j < members.length; j++) {
-				if(members[i].equals(members[j])) {
-//					members[i] = "0";
-//					members[j] = "0";
-					count++;
-				}
+			
+			boolean isSame = false;
+			if(members[i].equals("0")) {
+				continue;
 			}
 			
-		
+			for(int j = i + 1; j < members.length; j++) {
+					
+				if(members[i].equals(members[j])) {
+					members[j] = "0";
+					isSame = true;
+				}
+	
+			}
+			
+			if(isSame) {
+				count++;
+			}
+			
 		}
 		
 		System.out.print("동명 수 : " + count);
