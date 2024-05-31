@@ -12,8 +12,8 @@ public class Test03 {
 //
 //		My grade is B
 		
-		gradeString = gradeString.replace("A", "B");
-		System.out.println(gradeString);
+		String replaceString = gradeString.replace("A", "B");
+		System.out.println(replaceString);
 		
 		
 //		2. 문자열 자르기
@@ -23,11 +23,11 @@ public class Test03 {
 //
 //		010-1234-5678
 		
-		String a = phoneNumber.substring(0, 3);
-		String b = phoneNumber.substring(3, 7);
-		String c = phoneNumber.substring(7);
-		char typhoon = '-';
-		System.out.println(a + typhoon + b + typhoon + c);
+		String part1 = phoneNumber.substring(0, 3);
+		String part2 = phoneNumber.substring(3, 7);
+		String part3 = phoneNumber.substring(7);
+		char hyphen = '-';
+		System.out.println(part1 + hyphen + part2 + hyphen + part3);
 		
 //		3. 문자열 정수 변환
 //		아래와 같이 생년월일이 저장된 String 이 있을 때 올해 나이를 출력 하세요 (한국 나이)
@@ -36,10 +36,11 @@ public class Test03 {
 //
 //		1995년생의 나이는 29살
 		
-		String birthYear = birthString.substring(0, 4);
-		int birthYear2 = Integer.parseInt(birthYear);
+		String yearString = birthString.substring(0, 4);
+		int yearInt = Integer.parseInt(yearString);
+		int age = 2024 - yearInt + 1;
 		
-		System.out.println(birthYear + "년생의 나이는 " + (2024 - birthYear2) +  "살");
+		System.out.println(yearString + "년생의 나이는 " + age +  "살");
 		
 //		4. 문자열 검색
 //		영어 단어를 입력 받고 'e' 가 몇 개 들어 있는지 출력 하세요.
@@ -73,19 +74,19 @@ public class Test03 {
 		
 		System.out.println("아래 문자열의 단어 개수를 출력 하세요.(중복 포함)");
 		
-		String str[] = sentence.split(" ");
+		String words[] = sentence.split(" ");
 		
 		count = 0;
-		for(int i = 0; i < str.length; i++) {
+		for(int i = 0; i < words.length; i++) {
 			count++;
 		}
-		System.out.println("단어 개수 : " + count);
+		System.out.println("단어의 개수 : " + count);
 		
 		
 		//반복문없이
 		
-		int words = str.length;
-		System.out.println("반복문없이 : " + words);
+		int word = words.length;
+		System.out.println("반복문없이 : " + word);
 		
 	}
 	
