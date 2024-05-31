@@ -1,0 +1,9 @@
+package test.test02;
+
+public class Circle {
+
+	int radious;
+	
+	
+	
+}
