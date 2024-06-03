@@ -1,4 +1,4 @@
-package CodingTest;
+package test;
 
 public class 주사위게임 {
 	
