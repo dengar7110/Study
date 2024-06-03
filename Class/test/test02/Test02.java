@@ -26,13 +26,14 @@ public class Test02 {
 		
 		circle.radius = 8;
 
-		double area = circle.getArea(circle.radius);
+		double area = circle.calculateArea();
 		System.out.println("원의 넓이 : " + area);
 		
-		double round = circle.getRound(circle.radius);
+		double round = circle.calculateRound();
 		System.out.println("원의 둘레 : " + round);
 		
-		double area25 = circle.get25Area(circle.radius);
+		
+		double area25 = circle.calculateArea(25);
 		System.out.println("원 25개 넓이 : " + area25);
 		
 		
@@ -50,33 +51,39 @@ public class Test02 {
 		판매 가능 상품
 		유통기한을 이 지나지 않았을 경우 "판매 가능상품", 유통기한이 지났을 경우 "판매 불가 상품" (option) */
 		
-		Product product = new Product();
+		Goods ggang = new Goods();
 	
-		product.name = "새우깡";
-		product.price = 1300;
-		product.expirationDate = "2021-03-02";
+		ggang.name = "새우깡";
+		ggang.price = 1300;
+		ggang.expirationDate = "2024-12-30";
 		
-		int price5 = product.get5Product(product.price);
-		System.out.println("제품 5개의 가격 : " + price5);
+//		System.out.println("이름 : " + ggang.name);
+//		System.out.println("가격 : " + ggang.price);
+//		System.out.println("유통기한 : " + ggang.expirationDate);
 		
-		int price13 = product.get13Product(product.price);
-		System.out.println("제품 13개의 가격 : " + price13);
+		ggang.printInfo();
 		
-		System.out.println(product.discriminationProduct(product.expirationDate));
+		System.out.println("제품 5개의 가격 : " + ggang.calculatePrice(5));
+		System.out.println("제품 13개의 가격 : " + ggang.calculatePrice(13));
 		
-		Product product2 = new Product();
+		System.out.println(ggang.availableSale(ggang.expirationDate));
 		
-		product2.name = "꽃게랑";
-		product2.price = 1400;
-		product.expirationDate = "2024-06-03";
+		Goods rrang = new Goods();
 		
-		int price5_2 = product2.get5Product(product2.price);
-		System.out.println("제품 5개의 가격 : " + price5_2);
+		rrang.name = "꽃게랑";
+		rrang.price = 1400;
+		rrang.expirationDate = "2024-06-03";
 		
-		int price13_2 = product2.get13Product(product2.price);
-		System.out.println("제품 13개의 가격 : " + price13_2);
+		rrang.printInfo();
 		
-		System.out.println(product2.discriminationProduct(product.expirationDate));
+		
+		System.out.println("제품 5개의 가격 : " + rrang.calculatePrice(5));
+		System.out.println("제품 13개의 가격 : " + rrang.calculatePrice(13));
+		
+
+		
+		System.out.println(rrang.availableSale(rrang.expirationDate));
+		
 		
 	}
 
