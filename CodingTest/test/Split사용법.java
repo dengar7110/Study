@@ -1,4 +1,4 @@
-package CodingTest;
+package test;
 
 public class Split사용법 {
 
