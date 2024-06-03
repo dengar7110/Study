@@ -1,0 +1,17 @@
+package ex.ex01;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+
+		Person me = new Person("홍정원", "20020314");
+//		me.name = "홍정원";
+//		me.birth = "20020314";
+		
+		me.printInfo();
+		
+		
+	}
+	
+
+}
