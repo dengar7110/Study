@@ -1,4 +1,4 @@
-package CodingTest;
+package test;
 
 
 public class 조건문자열 {
