@@ -10,6 +10,16 @@ public class Ex01 {
 		
 		me.printInfo();
 		
+		// 개명
+		// 객체 내 멤버 변수 값 수정
+//		me.name = "김선재";
+		me.setName("김선재");
+		
+		me.printInfo();
+		
+		// 생년월일 출력
+		System.out.println(me.getBirthday());
+		
 		
 	}
 	
