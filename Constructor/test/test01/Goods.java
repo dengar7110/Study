@@ -74,11 +74,18 @@ public class Goods {
 //			return false;
 //		}
 		
-		if(expiration.compareTo(today) >= 0) {
-			return true;
-		}else {
-			return false;
-		}
+		// compareTo
+		// 비교대상 중 이전이 크다 : 1(양수)
+		// 비교대상 중 이전이 작다 : -1(음수)
+		// 비교대상 중 이전이랑 같다 : 0
+		
+//		if(expiration.compareTo(today) >= 0) {
+//			return true;
+//		}else {
+//			return false;
+//		}
+//		
+		return expiration.compareTo(today) >= 0;
 		
 	}
 	
