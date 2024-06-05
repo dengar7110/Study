@@ -6,7 +6,7 @@ public class Omrcard {
 	private String number;
 	private int[] answers;
 	
-	Omrcard(String name, String number){
+	public Omrcard(String name, String number){
 		this.name = name;
 		this.number = number;
 	}
