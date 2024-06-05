@@ -8,39 +8,34 @@ public class Lotto {
 	private int[] autoLotto;
 	
 	public Lotto(int num1, int num2, int num3, int num4, int num5, int num6){
-		this.manualLotto = new int[6];
-		this.manualLotto = new int[] {num1, num2, num3, num4, num5, num6};
+		manualLotto = new int[] {num1, num2, num3, num4, num5, num6};
 		
 		
-		this.autoLotto = new int[6];
+		autoLotto = new int[6];
 		Random ran = new Random();
 		
-		for(int i = 0; i < this.autoLotto.length;i++) {
+		for(int i = 0; i < autoLotto.length;i++) {
 			int random = ran.nextInt(46);
-			this.autoLotto[i] = random;
+			autoLotto[i] = random;
 		}
 	}
 	
-
-
 	public int[] getManualLotto() {
-		return this.manualLotto;
+		return manualLotto;
 	}
-
 
 	public int[] getAutoLotto() {
-		return this.autoLotto;
+		return autoLotto;
 	}
-
-
+	
 	public void setManual(int num1, int num2, int num3, int num4, int num5, int num6) {
-		this.manualLotto = new int[] {num1, num2, num3, num4, num5, num6};
+		manualLotto = new int[] {num1, num2, num3, num4, num5, num6};
 	}
 	
 	
 	public String strManual() {
 		String manual = "";
-		for(int i = 0; i < this.manualLotto.length; i++) {
+		for(int i = 0; i < manualLotto.length; i++) {
 			manual += manualLotto[i] + " ";
 		}
 		
@@ -49,7 +44,7 @@ public class Lotto {
 
 	public String strAuto() {
 		String auto ="";
-		for(int i = 0; i < this.autoLotto.length; i++) {
+		for(int i = 0; i < autoLotto.length; i++) {
 			auto += autoLotto[i] + " ";
 		}
 		
