@@ -4,7 +4,7 @@ public class OmrCardReader {
 
 	int[] corrects;
 	
-	OmrCardReader(int correct1, int correct2, int correct3, int correct4, int correct5){
+	public OmrCardReader(int correct1, int correct2, int correct3, int correct4, int correct5){
 		this.corrects = new int[] {correct1, correct2, correct3, correct4, correct5};
 	}
 
