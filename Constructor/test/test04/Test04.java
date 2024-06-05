@@ -28,10 +28,14 @@ public class Test04 {
 //	
 		
 		Lotto lotto = new Lotto(1, 3, 5, 7, 23, 12);
+		
 		String manual = lotto.strManual();
 		System.out.println(manual);
+		
 		String auto = lotto.strAuto();
 		System.out.println(auto);
+		
+		System.out.println();
 		
 		LottoChecker checker = new LottoChecker();
 		checker.lottoCheck(lotto);
