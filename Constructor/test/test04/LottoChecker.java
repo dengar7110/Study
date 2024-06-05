@@ -9,27 +9,19 @@ public class LottoChecker {
 	public LottoChecker(){
 		Random ran = new Random();
 
-		this.check = new int[6];
-		for(int i = 0; i < this.check.length; i++) {
+		check = new int[6];
+		for(int i = 0; i < check.length; i++) {
 			int random = ran.nextInt(46);
-			this.check[i] = random;			
+			check[i] = random;			
 		}
 		
 	}
-	
-	public int[] getCheck() {
-		return check;
-	}
-	
-	public void setCheck(int[] check) {
-		this.check = check;
-	}
-	
+
 	public void printCheck() {
 		
 		System.out.print("당첨번호 : ");
-		for(int i = 0; i < this.check.length; i++) {
-			System.out.print(this.check[i] + " ");
+		for(int i = 0; i < check.length; i++) {
+			System.out.print(check[i] + " ");
 		} 
 	}
 	
@@ -55,21 +47,18 @@ public class LottoChecker {
 	}
 	
 	
-	int checking(int[] a , int[] b) {
-		
+	int checking(int[] lotto , int[] check) {	
 		int count = 0;
 		
-		for(int i = 0; i < a.length; i++) {
+		for(int i = 0; i < lotto.length; i++) {
 			
-			for(int j = 0; j < b.length; j++) {
+			for(int j = 0; j < check.length; j++) {
 				
-				if(a[i] == b[j]) {
+				if(lotto[i] == check[j]) {
 					count++;
 				}
 			}
 		}
-		
-		
 		return count;
 		
 	}
