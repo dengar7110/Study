@@ -6,7 +6,7 @@ public class LottoChecker {
 
 	int[] check;
 	
-	LottoChecker(){
+	public LottoChecker(){
 		Random ran = new Random();
 
 		this.check = new int[6];
