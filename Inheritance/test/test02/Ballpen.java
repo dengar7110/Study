@@ -1,21 +1,9 @@
 package test.test02;
 
-class Ballpen extends SharpPencil{ // 볼펜
-//    private int amount; // 남은 량
+class Ballpen extends Pen { // 볼펜
+	
     private String color; // 볼펜의 색
 
-    // overrideSharpPencil
-    @Override
-    public int getAmount() { 
-        return super.getAmount(); 
-    }
-    
-    // override SharpPencil
-    @Override
-    public void setAmount (int amount) { 
-        super.setAmount(amount);; 
-    }
-    
     public String getColor() { 
         return color; 
     }
