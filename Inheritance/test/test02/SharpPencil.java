@@ -12,3 +12,5 @@ class SharpPencil { // 샤프펜슬
         this.amount = amount; 
     }
 }
+
+
