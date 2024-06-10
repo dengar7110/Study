@@ -27,25 +27,13 @@ public class Test02 {
 		
         Shape[] shape = new Shape[3];
 
-        // upcasting
+	    // upcasting
         shape[0] = new Triangle(8, 10);
-        shape[1] = new Rectangle(7, 13);
-        shape[2] = new Circle(12);
+	    shape[1] = new Rectangle(7, 13);
+	    shape[2] = new Circle(12);
 
 		for(int i = 0; i < shape.length; i++) {
-			if(shape[i]  instanceof Triangle) {
-				Triangle triangle = (Triangle)shape[i];
-				System.out.println("삼각형의 넓이는 : " + triangle.calculateArea() + "cm^2 입니다.");
-			}
-			if(shape[i]  instanceof Rectangle) {
-				Rectangle rectangle = (Rectangle)shape[i];
-				System.out.println("사각형의 넓이는 " + rectangle.calculateArea() + "cm^2 입니다.");
-			}
-			if(shape[i]  instanceof Circle) {
-				Circle circle = (Circle)shape[i];
-				System.out.println("원의 넓이는 " + circle.calculateArea() + "cm^2 입니다." );
-			}
-			
+			shape[i].printArea();
 		}
         
 		
