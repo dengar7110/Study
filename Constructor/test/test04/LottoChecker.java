@@ -4,83 +4,83 @@ import java.util.Random;
 
 public class LottoChecker {
 
-	int[] check;
-	
-	public LottoChecker(){
-		Random ran = new Random();
+	// 당첨 번호
+	private int[] winningNumbers = new int[6];
 
-		check = new int[6];
-		for(int i = 0; i < check.length; i++) {
-			int random = ran.nextInt(46);
-			check[i] = random;			
-		}
+	// 당첨 번호 뽑는 기능
+	public void drawLots() {
+		Random random = new Random();
 		
-	}
-
-	public void printCheck() {
-		
-		System.out.print("당첨번호 : ");
-		for(int i = 0; i < check.length; i++) {
-			System.out.print(check[i] + " ");
-		} 
-	}
-	
-
-	public void lottoCheck(Lotto lotto) {
-		
-		int[] manual = lotto.getManualLotto();
-		int[] auto = lotto.getAutoLotto();
-		
-		int result = checking(manual, check);
-		int result2 = checking(auto, check);
-		
-		printCheck();
-		System.out.println();
-		
-		String manualStr = lotto.strManual();
-		String grade = strGrade(result);
-		System.out.println(manualStr + grade);
-		
-		String autoStr = lotto.strAuto();
-		String grade2 = strGrade(result2);
-		System.out.println(autoStr + grade2);
-	}
-	
-	
-	int checking(int[] lotto , int[] check) {	
-		int count = 0;
-		
-		for(int i = 0; i < lotto.length; i++) {
+		for(int i = 0; i < winningNumbers.length; i++) {
+			int randomNumber = random.nextInt(45) + 1;
+			winningNumbers[i] = randomNumber;
 			
-			for(int j = 0; j < check.length; j++) {
-				
-				if(lotto[i] == check[j]) {
-					count++;
+			for(int j = 0; j < i; j++) {
+				if(randomNumber == winningNumbers[j]) {
+					// 중복되었다
+					i--;
+					break;
 				}
 			}
 		}
-		return count;
 		
 	}
 	
-	String strGrade(int num){
-		if(num == 0) {
-			return "꽝";
-		}else if(num == 1) {
-			return "6등";
-		}else if(num == 2) {
-			return "5등";
-		}else if(num == 3) {
-			return "4등";
-		}else if(num == 4) {
-			return "3등";
-		}else if(num == 5) {
-			return "2등";
-		}else if(num == 6) {
-			return "1등";
+	// 출력 기능
+	public void printInfo() {
+		System.out.print("당첨번호 : ");
+		for(int i = 0; i < winningNumbers.length; i++) {
+			System.out.print(winningNumbers[i] + " ");
+		} 
+		System.out.println();
+	}
+	
+	// 일치하는 개수를 확인하는 기능
+	public int checkCount(Lotto lotto) {
+		int[] numbers = lotto.getCheckNumbers();
+		int count = 0;
+		
+		for(int i = 0; i < numbers.length; i++) {
+			int number = numbers[i];
+			for(int j = 0; j < winningNumbers.length; j++) {
+				if(number == winningNumbers[j]) {
+					count++;
+					break;
+				}				
+			}
+		}
+		return count;
+	}
+	
+	// 당첨 결과 출력 기능
+	public void printResult(Lotto lotto) {
+		int count = checkCount(lotto);
+//		6개: 1등, 5개: 2등, 4개: 3등, 3개: 4등, 2개 : 5등 나머지: 꽝
+		
+		switch(count) {
+		case 6 :
+			System.out.println("1등");
+			break;
+		case 5 :
+			System.out.println("2등");
+			break;
+		case 4 : 
+			System.out.println("3등");
+			break;
+		case 3 : 
+			System.out.println("4등");
+			break;
+		case 2 : 
+			System.out.println("5등");
+			break;
+		default : 
+			System.out.println("꽝");
+			break;
 		}
 		
-		return "잘못된입력";
 	}
+	
+	
+	
 	
 }
