@@ -27,18 +27,16 @@ public class Test04 {
 //		1 14 45 11 16 22 5등
 //	
 		
-		Lotto lotto = new Lotto(1, 3, 5, 7, 23, 12);
-		
-		String manual = lotto.strManual();
-		System.out.println(manual);
-		
-		String auto = lotto.strAuto();
-		System.out.println(auto);
-		
-		System.out.println();
+		Lotto lotto = new Lotto();
+//		lotto.manual(5, 7, 11, 28, 32, 40);
+		lotto.auto();
+		lotto.printInfo();
 		
 		LottoChecker checker = new LottoChecker();
-		checker.lottoCheck(lotto);
+		checker.drawLots();
+		checker.printInfo();
+
+		checker.printResult(lotto);
 		
 	}
 
