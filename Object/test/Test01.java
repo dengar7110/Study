@@ -1,7 +1,5 @@
 package test;
 
-import javax.swing.table.TableRowSorter;
-
 public class Test01 {
 
 	public static void main(String[] args) {
