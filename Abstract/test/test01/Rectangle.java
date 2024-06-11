@@ -1,29 +1,32 @@
 package test.test01;
 
-public class Rectangle extends Shape{
-
+public class Rectangle extends Shape {
+	
 	private int width;
 	private int height;
 	
 	public Rectangle(int width, int height) {
-		super();
+		super("사각형");
 		this.width = width;
 		this.height = height;
 	}
-	
-	@Override
-	public double calculateRound() {
-		return (2 * width) + (2 * height);
-	}
-	
+
 	@Override
 	public double calculateArea() {
-		return  width * height;
+		double area = width * height;
+		return area;
 	}
 
 	@Override
-	public void printRoundwithArea() {
-		System.out.println("사각형의 넓이 " + calculateArea() + " 둘레" + calculateRound());
+	public double calculateRound() {
+		double round = (width * 2) + (height * 2);
+		return round;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "가로 : " + width + "세로 : " + height;
+	}
+	
+	
 }
