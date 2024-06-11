@@ -2,5 +2,5 @@ package test;
 
 public interface Sing {
 
-	public void sing();
+	public void singASong();
 }
