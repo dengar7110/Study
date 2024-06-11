@@ -1,28 +1,29 @@
 package test.test01;
 
-public class Circle extends Shape{
+public class Circle extends Shape {
 
 	private int radius;
 	
 	public Circle(int radius) {
+		super("원");
 		this.radius = radius;
-	}
-	
-	@Override
-	public double calculateRound() {
-		return 2 * 3.14 * radius;
 	}
 
 	@Override
 	public double calculateArea() {
-		return 3.14 * radius * radius;
+		double area = radius * radius * 3.14;
+		return area;
 	}
 
 	@Override
-	public void printRoundwithArea() {
-		System.out.println("원의 넓이 " + calculateArea() + " 둘레 " + calculateRound());		
+	public double calculateRound() {
+		double round = 2 * 3.14 * radius;
+		return round;
 	}
-
 	
+	@Override
+	public String toString() {
+		return "반지름 : " + radius;
+	}
 	
 }
