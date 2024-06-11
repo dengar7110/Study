@@ -1,16 +1,19 @@
 package test.test01;
 
 public abstract class Shape {
+
+	private String name;
 	
-	protected String name;
+	public abstract double calculateArea();
 	
-	public abstract double calculateRound(); 
-		
-	public abstract double calculateArea(); 
+	public abstract double calculateRound();
 	
-	// 넓이 둘레 출력 기능
-	public void printRoundwithArea() {
-		System.out.println(name + "의 넓이 " + calculateArea() + " " + name + "의 둘레 " + calculateRound());
+	public void printAreaWithRound() {
+		System.out.println(name + " 넓이 " + calculateArea() + " 둘레 " + calculateRound() );
+	}
+	
+	public Shape(String name) {
+		this.name = name;
 	}
 	
 }
