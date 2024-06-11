@@ -21,16 +21,18 @@ public class Test01 {
 //
 //		사각형 넓이 250.0 둘레 70.0
 //		원 넓이 200.96 둘레 50.24
-
+		
 		Shape[] shapes = new Shape[2];
 		
-		shapes[0] = new Rectangle(10, 25);
+		shapes[0] = new Rectangle(10,25);
 		shapes[1] = new Circle(8);
 		
 		for(int i = 0; i < shapes.length; i++) {
-			shapes[i].printRoundwithArea();
+			shapes[i].printAreaWithRound();
 		}
 		
 		
+		
 	}
+	
 }
