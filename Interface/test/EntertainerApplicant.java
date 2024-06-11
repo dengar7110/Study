@@ -2,16 +2,17 @@ package test;
 
 public class EntertainerApplicant implements Sing , Act{
 
-//	private String name;
-//	private int age;
+	//이름, 나이
+	private String name;
+	private int age;
 	
 	@Override
-	public void act() {
+	public void methodActing() {
 		System.out.println("연기하다");
 	}
 	
 	@Override
-	public void sing() {
+	public void singASong() {
 		System.out.println("노래하다");
 	}
 	
