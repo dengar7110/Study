@@ -4,7 +4,11 @@ public class ThreadImplements implements Runnable {
 
 	private String message;
 	
+	public ThreadImplements(String message) {
+		this.message = message;
+	}
 	@Override
+	
 	public void run() {
 		for(int i = 0; i < 10; i++) {
 			
@@ -19,8 +23,5 @@ public class ThreadImplements implements Runnable {
 	}
 	
 	
-	public ThreadImplements(String message) {
-		this.message = message;
-	}
 	
 }
