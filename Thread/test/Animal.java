@@ -1,11 +1,12 @@
 package test;
 
-public class Zoo implements Runnable {
+public class Animal implements Runnable {
 
-	public String sound;
+	// 울음 소리
+	public String cry;
 	
-	public Zoo(String sound) {
-		this.sound = sound;
+	public Animal(String cry) {
+		this.cry = cry;
 	}
 	
 	@Override
@@ -18,7 +19,7 @@ public class Zoo implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println(sound);
+			System.out.println(cry);
 		}
 		
 	}
