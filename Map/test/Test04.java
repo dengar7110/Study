@@ -69,6 +69,36 @@ public class Test04 {
 //	        서버 : B
 //	        레벨 : 84
 	     
+	        int	maxLevel = 0;
+	        Map<String, String> maxCharacter = null;
+	        
+	        for(Map<String, String> character : characterList) {
+	        	// 서버가 나와 같은 캐릭터 이고 직업이 힐러인 캐릭터
+	        	String myServer = myCharacter.get("서버");
+	        	
+	        	String server = character.get("서버");
+	        	String job = character.get("직업");
+	        	if(server.equals(myServer) && job.equals("힐러")) {
+	        		
+	        		String levelString = character.get("레벨");
+	        		int level = Integer.parseInt(levelString);
+	        		if(level > maxLevel) {
+	        			maxLevel = level;
+	        			maxCharacter = character;
+	        		}
+	        		
+//	      			System.out.println("닉네임 : " + character.get("닉네임"));
+//        			System.out.println("직업 : " + character.get("직업"));
+//        			System.out.println("서버 : " + character.get("서버"));
+//        			System.out.println("레벨 : " + character.get("레벨"));
+	        	}
+	        }
+	        
+	        System.out.println(maxLevel);
+	        System.out.println(maxCharacter);
+	        
+	        
+	        
 	        System.out.println("힐러 탐색 결과");
 	        
 	        for(int i = 0; i < characterList.size(); i++) {
