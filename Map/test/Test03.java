@@ -60,6 +60,16 @@ public class Test03 {
         		}
         		
         	}
+
+                for(String category: bookMap.keySet()) {
+        	Map<String, String> books = bookMap.get(category);
+        	
+        	if(books.containsKey(searchBook)){
+
+        		String author = books.get(searchBook);
+        		System.out.println(searchBook + "의 작가는 " + author + "입니다.");
+        	}
+        }
   
         
         }
