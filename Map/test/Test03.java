@@ -3,6 +3,7 @@ package test;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Test03 {
 
@@ -50,27 +51,18 @@ public class Test03 {
 //        책이름에 해당하는 작가명을 출력한다.
 //        예) 어린왕자의 작가명은 생텍쥐페리
         
+        Set<String> genreSet = bookMap.keySet();
         
-        for(String category:bookMap.keySet()) {
-        	Map<String, String> maps = bookMap.get(category);
+        for(String genre:genreSet) {
+        	Map<String, String> authorMap = bookMap.get(genre);
         		
-        		if(maps.containsKey(searchBook)) {
-        			String author = maps.get(searchBook);
-        			System.out.println(author);
+        		if(authorMap.containsKey(searchBook)) {
+        			String author = authorMap.get(searchBook);
+        			System.out.println(searchBook + "의 작가명은 " + author);
         		}
-        		
         	}
 
-                for(String category: bookMap.keySet()) {
-        	Map<String, String> books = bookMap.get(category);
-        	
-        	if(books.containsKey(searchBook)){
-
-        		String author = books.get(searchBook);
-        		System.out.println(searchBook + "의 작가는 " + author + "입니다.");
-        	}
-        }
-  
+        
         
         }
         
