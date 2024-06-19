@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. 기본 표 만들기</h3>
+    <table border="1">
+        <!-- 한 행을 만드는 태그 -->
+        <tr>
+            <!-- 하나의 컬럼을 만드는 태그 -->
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <h3>2. 항목이 있는 표 만들기</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>노래</th>
+                <th>가수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>슈퍼 노바</td>
+                <td>에스파</td>
+            </tr>
+            <tr>
+                <td>고민중독</td>
+                <td>qwer</td>
+            </tr>
+            <tr>
+                <td>해야</td>
+                <td>아이브</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>3. 병합</h3>
+    <table border="1">
+        <tr>
+            <td colspan="2">1</td>
+            <!--<td>2</td>-->
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td colspan="3">6</td>
+        <!-- <td>7</td>
+            <td>8</td> -->
+        </tr>
+        <tr>
+            <td rowspan="2">9</td>
+            <td>10</td>
+            <td>11</td>
+            <td rowspan="3">12</td>
+        </tr>
+        <tr>
+            <!-- <td>13</td> -->
+            <td>14</td>
+            <td>15</td>
+            <!-- <td>16</td> -->
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <!-- <td>20</td> -->
+        </tr>
+    </table>
+
+
+</body>
+</html>
