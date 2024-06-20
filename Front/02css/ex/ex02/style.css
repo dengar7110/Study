@@ -1,0 +1,31 @@
+.id-input {
+    width:150px;
+    height:30px;
+    font-size:23px;
+}
+
+.password-input {
+    width:100px;
+    height:25px;
+}
+
+.song-table {
+    width:300px;
+    height:200px;
+    text-align:center;
+}
+
+/* 
+    소속 관계를 포함한
+    셀렉터
+*/
+.song-table > thead {
+    /*  RGB
+    #000000
+    */
+    background-color:#e8fff6;
+}
+
+.song-table > tbody > tr:hover{
+    background-color: #f1dcff;
+}
