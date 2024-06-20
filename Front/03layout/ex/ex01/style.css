@@ -1,0 +1,13 @@
+.box-size {
+    width: 200px;
+    height: 150px;
+}
+.box1 {
+    background-color: chocolate;
+}
+.box2{
+    background-color: darkgreen;
+}
+.display-flex {
+    display: flex;
+}
