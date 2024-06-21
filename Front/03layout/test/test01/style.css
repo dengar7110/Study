@@ -1,0 +1,29 @@
+
+.box1 {
+    background-color: red;
+}
+.box2 {
+    background-color: green;
+}
+.box3 {
+    background-color: yellow;
+}
+.box4 {
+    background-color: blue;
+}
+.box-size {
+    width: 100px;
+    height: 100px;
+}
+.margin-right {
+    margin-right: 10px;
+}
+.margin-bottom{
+    margin-bottom: 10px;
+}
+.box-align {
+    justify-content: center;
+}
+.display-flex {
+    display: flex;
+}
