@@ -1,0 +1,44 @@
+#wrap {
+    width: 1200px;
+    /* 좌우 자동 여백 */
+    margin: 0 auto;
+}
+
+header {
+    height: 100px;
+    background-color: coral;
+}
+
+.main-menu {
+    height: 50px;
+    background-color: blueviolet;
+}
+
+.contents > .main-contents {
+    width: 900px;
+}
+
+.main-contents > .contents1 {
+    height: 250px;
+    background-color:crimson;
+}
+
+.main-contents > .contents2 {
+    height: 250px;
+    background-color: darkgreen;
+}
+
+.contents > .sub-contents {
+    width: 300px;
+    height: 500px;
+    background-color: gold;
+}
+
+footer {
+    height: 80px;
+    background-color: firebrick;
+}
+
+.display-flex {
+    display: flex;
+}
