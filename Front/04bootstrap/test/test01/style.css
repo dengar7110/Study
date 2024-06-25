@@ -1,0 +1,26 @@
+#wrap {
+    width: 1200px;
+}
+header {
+    height: 100px;
+}
+header > .logo {
+    width: 300px;
+    height: 100px;
+}
+header > .main-menu {
+    width: 900px;
+    height: 100px;
+}
+.contents {
+    height: 500px;
+}
+footer {
+    height: 80px;
+}
+footer > .logo {
+    height: 80px;
+}
+footer > .copyright {
+    height: 80px;
+}
