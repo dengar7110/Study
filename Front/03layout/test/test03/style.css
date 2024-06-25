@@ -1,0 +1,40 @@
+#wrap {
+   width: 1200px; 
+}
+
+header {
+    height: 150px;
+    background-color: coral;
+}
+.contents {
+    height: 500px;
+    background-color: darkblue;
+}
+.contents > .main-contents {
+    width: 1000px;
+    height: 500px;
+    background-color: hotpink;
+}
+.contents > .sub-contents {
+    width: 300px;
+    height: 500px;
+    background-color: greenyellow;
+}
+footer > .logo {
+    width: 200px;
+    height: 100px;
+    background-color: gold;
+}
+footer > .address {
+    width: 800px;
+    height: 100px;
+    background-color: cadetblue;
+}
+footer > .right {
+    width: 200px;
+    height: 100px;
+    background-color: goldenrod;
+}
+.display-flex {
+    display: flex;
+}
