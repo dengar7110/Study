@@ -1,0 +1,30 @@
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+header > .logo{
+    height: 100px;
+}
+header > .main-menu {
+    height: 100px;
+}
+
+.contents > .banner {
+    height: 500px;
+    overflow: hidden;
+}
+
+.contents > .check {
+    height: 500px;
+}
+footer {
+    height: 70px;
+}
+footer > .logo{
+    height: 70px;
+    width: 200px;    
+}
+
+footer > .copyright {
+    width: 800px;
+}
