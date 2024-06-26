@@ -8,8 +8,12 @@ public class 자릿수더하기 {
 	public class Solution {
 	    public int solution(int n) {
 	        int answer = 0;
-
-
+	        String number = String.valueOf(n);
+	        
+	        for(int i = 0; i < number.length(); i++) {
+	        	int num = Character.getNumericValue(number.charAt(i)); 
+	        	answer += num;
+	        }
 
 	        return answer;
 	    }
