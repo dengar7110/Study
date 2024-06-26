@@ -1,0 +1,30 @@
+#wrap {
+    margin: 0 auto;
+}
+
+header > .search {
+    width: 400px;
+    height: 100px;
+}
+header > .logo {
+    width: 400px;
+    height: 100px;
+}
+header > .account-menu {
+    width: 400px;
+    height: 100px;
+}
+.check {
+   background-color:#dddddd;
+}
+.main-menu {
+    height: 40px;
+    background-color: #dddddd;
+}
+
+footer {
+    height: 70px;
+}
+.discount {
+    text-decoration: line-through;
+}
