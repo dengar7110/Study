@@ -1,0 +1,38 @@
+#wrap {
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+header > .logo{
+    width: 200px;
+    height: 100px;
+}
+header > .search {
+    width: 800px;
+    height: 100px;
+}
+header > .account {
+    width: 200px;
+    height: 100px;
+}
+.contents > .main-menu {
+    width: 200px;
+}
+.contents > .main-contents {
+    width: 1000px;
+}
+
+.main-menu > ul > li:hover {
+    background-color: #dddddd;
+}
+.video-list{
+    background-color: #eeeeee;
+}
+.video{
+    width: 300px;
+}
+
+footer{
+    height: 70px;
+}
