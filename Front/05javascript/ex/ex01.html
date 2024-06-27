@@ -24,12 +24,54 @@
             console.log("number는 10이다");
             // 지역변수
             let local = 100;
+            // 전역변수
             var global = 200;
         }
 
-        console.log(local);
+        // console.log(local);
         console.log(global);
 
+        // 문자열 비교
+        if(text == "Hello World!!"){
+            console.log("text는 Hello World!!");
+        }
+
+        // 문자열 정수와 정수 비교
+        let stringNumber = "10";
+        let intNumber = 10;
+
+        // 다른 타입을 비교가능한 타입으로 변환 후 비교
+        if(stringNumber == intNumber) {
+            console.log("문자열 10과 정수 10이 같다")
+        }
+
+        // 타입까지 일치하는지 비교
+        if(stringNumber === intNumber) {
+            console.log("두 값은 타입까지 일치한다");
+        }
+
+        // 비어있는 변수 처리
+        let empty;
+        console.log(empty); // undefined
+
+        let nullVariable = null;
+        console.log(nullVariable);
+
+        if(empty == nullVariable) {
+            console.log("둘다 비어 있다!");
+        }
+        
+        if(empty == null) {
+            console.log("empty 가 null");
+        }
+
+        if(nullVariable == undefined) {
+            console.log("null 은 undefined")
+        }
+
+        if(empty === nullVariable){
+            console.log("undefined 와 null 은 같다");
+        }
 
 
     </script>
