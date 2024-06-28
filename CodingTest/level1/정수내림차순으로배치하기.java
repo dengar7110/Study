@@ -12,28 +12,28 @@ public class 정수내림차순으로배치하기 {
 
 	class Solution {
 	    public long solution(long n) {
-	        long answer = 0;
-	        
-	        String stringN = String.valueOf(n);
-	        
-	        List<Integer> numList = new ArrayList<>();
-	        
-	        
-	        for(int i = 0; i < stringN.length(); i++) {
-	        	int number =  Character.getNumericValue(stringN.charAt(i));
-	        	numList.add(number); 
-	        }
-	        Collections.sort(numList);
-	        
-	        String aa = "" ;
-	        for(int i = 0; i < numList.size(); i++) {
-	        	aa +=  numList.get((numList.size() - 1) - i);
-	        }
-	        
-	        answer = Integer.parseInt(aa);
-	        
-	        return answer;
+	            
+	            String strN = String.valueOf(n);
+	            List<Integer> numList = new ArrayList<>();
+	            
+	            // 각 자릿수를 리스트에 저장
+	            for (int i = 0; i < strN.length(); i++) {
+	                int number = Character.getNumericValue(strN.charAt(i));
+	                numList.add(number); 
+	            }
+	            
+	            // 리스트를 큰 순서대로 정렬
+	            Collections.sort(numList, Collections.reverseOrder());
+	            
+	            // 정렬된 숫자들을 문자열로 조합
+	            StringBuilder strAnswer = new StringBuilder();
+	            for (int num : numList) {
+	                strAnswer.append(num);
+	            }
+	            
+	            // 문자열로 된 숫자를 long으로 변환하여 반환
+	            return Long.parseLong(strAnswer.toString());
 	    }
+
 	}
-	
 }
