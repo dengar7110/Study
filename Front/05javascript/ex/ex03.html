@@ -3,101 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test03</title>
+    <title>문자열</title>
 </head>
 <body>
-    
+
     <script>
-// 1. 길이 제한
-// 아이디의 글자 수 제한은 8글자이다.
-// 아래 변수로 주어진 id 를 기준으로 제한 글자가 넘어 갔을 때, 아래와 같이 경고 문구와 8자로 자른 문자열을 alert으로 출력하세요.
-let userid = "my_id_very_simple";
-// 출력 예시
-// id는 8자를 넘길 수 없습니다. my_id_ve
 
-    if(userid.length > 8){
-        console.log("id는 8자를 넘길 수 없습니다. " + userid.substring(0,8));
-    }
+        let text = "I must do what I want to do";
 
-// 2. 파일 이름
-// 파일 경로가 저장된 문자열이 있다.
-// 해당 문자열에서 파일 이름을 추출하여 console 로 출력 하세요.
-let path = "/Users/master/Document/image/city.jpg";
-// 출력 예시
+        // 문자열 길이 
+        console.log(text.length);
 
-// city.jpg
+        // 특정 위치 문자 얻기
+        console.log(text.charAt(7));
 
-    let pathArray = path.split("/");
-    let lastIndex = pathArray.length - 1;
-    console.log(pathArray[lastIndex]);
+        // 특정 문자열이 어느 위치에 있는지 확인
+        console.log(text.indexOf("what"));
+        console.log(text.indexOf("asdf"));
 
-// 3. 데이터 정리
-// 아래와 같이 사용자가 입력한 내용을 dictionary 에 저장하였다.
-let info = {
-    "name":"김 인규",
-    "phoneNumber":"01012345678",
-    "introduce":"    안녕하세요. 저는 기분이 좋네요.  "
-};
-// 해당 내용을 아래와 같은 형태로 출력하세요.
-// 출력 예시
+        // 특정 문자열이 존재하는지
+        console.log(text.includes("must"));
 
-// 이름 : 김인규 전화번호 : 010-1234-5678 소개 : 안녕하세요. 저는 기분이 좋네요.
+        // 특정 문자열을 다른 문자열로 바꾸기 (치환)
+        console.log(text.replace("I", "You"));
+        console.log(text);
 
-    console.log("이름 : " + info.name + " 전화번호 : " + info.phoneNumber + " 소개 : " + info.introduce.trim())
+        // 모든 문자열 치환 - 정규표현식 (Regular expression)
+        console.log(text.replace(/I/g, "You"));
 
-// 4. 문자열 데이터
-// 아래와 같이 특정한 규칙으로 회원의 이름과 생년월일이 문자열로 저장 되어 있다.
-let membersString = "루피:19931005,조로:19890513,나미:19970705,쵸파:20040932";
-// 문자열 함수를 사용해서 아래와 같은 형태의 데이터형으로 만들고 객체 그대로 console로 출력하세요.
-// [
-//     {name: "루피", birth: "19931005"}
-//     {name: "조로", birth: "19890513"}
-//     {name: "나미", birth: "19970705"}
-//     {name: "쵸파", birth: "20040932"}
-// ]
+        // 문자열 자르기
+        console.log(text.substring(2,6));
 
-    let members = membersString.split(",");
-    
-    let memberInfoList = [];
-    let names = [];
-    let births = [];
-    for(let i = 0; i < members.length; i++){
-        let memberInfo = {};
-        let parts = members[i].split(":");
-        
-        memberInfo["name"]+parts[0];
-        memberInfo["birth"]+parts[1];
+        // 문자열 쪼개기
+        let parts = text.split(" ");
+        console.log(parts);
 
-    }
-    console.log(memberInfo);
-    
+        // 문자열 앞뒤 공백 제거
+        let userId = "         dulumary               ";
+        console.log(userId);
+        console.log(userId.trim());
 
 
-
-
-    // for(let i = 0; i < names.length; i++){
-    //     memberList["name"].push(names[i]);
-    // }
-
-    console.log(names);
-    console.log(births);
-
-
-
-    
-    
-
-// (4) [{…}, {…}, {…}, {…}]
-// 0: {name: "루피", birth: "19931005"}
-// 1: {name: "조로", birth: "19890513"}
-// 2: {name: "나미", birth: "19970705"}
-// 3: {name: "쵸파", birth: "20040932"}
-// length: 4
-
-
-// 5. 생월 찾기
-// 위 문제에서 만들어진 데이터를 이용해서 7월 생의 이름을 console로 출력하세요.
-// 나미
     </script>
+    
 </body>
 </html>
