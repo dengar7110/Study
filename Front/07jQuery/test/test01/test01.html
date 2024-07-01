@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery click 이벤트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>1. 비밀번호 일치</h1>
+        <label>비밀번호 : <input type="password" id="password"></label>
+        <lable>비밀 번호 확인 : <input type="password" id="checkPassword"></lable>
+        <button type="button" id="checkBtn">확인</button>
+    </div>
+    <hr>
+    <div>
+        <h1>2. 금칙어</h1>
+        <input type="text" id="banText">
+        <button type="button" id="banCheckBtn">검색</button>
+    </div>
+    <hr>
+    <div>
+        <h1>3. 더보기</h1>
+        <button type="button" id="moreBtn">펼치기</button>
+        <div id="textBox">
+            <h1>추가 설명입니다 블라 블라</h1>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h1>4. 사각형 바꾸기</h1>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            // 1.비밀번호 일치
+            $("#checkBtn").on("click", function() {
+                let password = $("#password").val();
+                let checkPassword =  $("#checkPassword").val();
+                if(password == "" ||  checkPassword == ""){
+                    alert("비밀번호를 입력해주세요")
+                }
+
+                if(password == checkPassword){
+                    alert("확인 완료");
+                }else {
+                    alert("비밀번호가 일치하지 않습니다.");
+                }
+            });
+            
+            //2. 금칙어 처리
+            let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
+
+            $("#banCheckBtn").on("click", function(){
+                let banText = $("#banText").val();
+                for(let i = 0; i < bannedWords.length; i++){
+                    if(bannedWords[i] == banText){
+                        alert("금칙어가 포함되어 있습니다. 검색할 수 없습니다.")
+                        return;
+                    }                     
+                }
+                alert(banText);
+            });
+
+            //3. 더보기
+            $("#moreBtn").on("click", function() {
+                if($("#moreBtn").text() == "펼치기"){
+                    $("#moreBtn").text("닫기");
+                    $("#textBox").show();
+
+                }else{
+                    $("#moreBtn").text("펼치기");
+                    $("#textBox").hide();
+                }
+                
+
+            });
+
+        });
+
+    </script>
+</body>
+</html>
