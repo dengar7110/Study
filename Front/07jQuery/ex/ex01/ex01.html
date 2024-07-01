@@ -30,55 +30,60 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
 
-        $("#changeLinkBtn").on("click", function() {
+        // 모든 태그가 DOM Tree로 완성된 이벤트
+        $(document).ready(function() {
+            $("#changeLinkBtn").on("click", function() {
             $("#link").attr("href", "https://naver.com");
+            });
+
+
+            $("#changeBtn").on("click", function() {
+                // 간단한 스타일 부여
+                // $("#box").css("background-color","red");
+                // box 클래스를 가지고 있는경우
+                if($("#box").hasClass("box")){
+                    // box 제거 , box2 추가
+                    $("#box").removeClass("box");
+                    $("#box").addClass("box2");
+                }else if($("#box").hasClass("box2")){
+                    // box2 클래스를 가지고 있는 경우
+                    // box2 를 제거, box 추가
+                    $("#box").removeClass("box2");
+                    $("#box").addClass("box");
+                }
+            });
+
+            $("#boxBtn").on("click", function() {
+                // #box가 보이는 경우 숨긴다.
+                if($("#box").is(":visible")){
+                    $("#box").hide();
+                }else {    // #box가 안보이는 경우 보여준다
+                    $("#box").show();
+                }
+            });
+
+            // 버튼을 클릭했을때 수행할 기능을 등록
+            // event 이벤트
+            // click event 가 발생 했을때 수행 할 기능 등록
+            $("#confirmBtn").on("click",function() {     // 익명함수
+                // input 의 입력 내용을 가져온다.
+                // value 속성 값을 얻어 온다.
+                let text =  $("#textInput").val();
+
+                // 유효성 검사, Validation
+                if(text == ""){
+                    alert("내용을 입력해주세요");
+                    return;     // 함수 중단
+                }
+                // alert(text);
+                $("#textDiv").text(text);
+                $("#copyInput").val(text);
+
+            });
+            $("#contents").text("바뀐내용");
         });
 
-
-        $("#changeBtn").on("click", function() {
-            // 간단한 스타일 부여
-            // $("#box").css("background-color","red");
-            // box 클래스를 가지고 있는경우
-            if($("#box").hasClass("box")){
-                // box 제거 , box2 추가
-                $("#box").removeClass("box");
-                $("#box").addClass("box2");
-            }else if($("#box").hasClass("box2")){
-                // box2 클래스를 가지고 있는 경우
-                // box2 를 제거, box 추가
-                $("#box").removeClass("box2");
-                $("#box").addClass("box");
-            }
-        });
-
-        $("#boxBtn").on("click", function() {
-            // #box가 보이는 경우 숨긴다.
-            if($("#box").is(":visible")){
-                $("#box").hide();
-            }else {    // #box가 안보이는 경우 보여준다
-                $("#box").show();
-            }
-        });
-
-        // 버튼을 클릭했을때 수행할 기능을 등록
-        // event 이벤트
-        // click event 가 발생 했을때 수행 할 기능 등록
-        $("#confirmBtn").on("click",function() {     // 익명함수
-            // input 의 입력 내용을 가져온다.
-            // value 속성 값을 얻어 온다.
-            let text =  $("#textInput").val();
-
-            // 유효성 검사, Validation
-            if(text == ""){
-                alert("내용을 입력해주세요");
-                return;     // 함수 중단
-            }
-            // alert(text);
-            $("#textDiv").text(text);
-            $("#copyInput").val(text);
-
-        });
-        $("#contents").text("바뀐내용");
+        
         
 
 
