@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Tree</title>
+    
+</head>
+<body>
+    <h1>일기</h1>
+    <div>
+        <div>날짜 : 2024년 7월 1일</div>
+        <div>날씨 : 구름 많음</div>
+    </div>
+
+    <div id="contents">
+        DOM Tree를 배웠다 <br>
+        나무라고 하는데 뭔지 잘 모르겠다
+    </div>
+
+    <script>
+        let contentsDIV = document.getElementById("contents");
+        console.log(contentsDIV);
+        contentsDIV.innerText = "모르겠어 ㅠㅠ";
+
+        let titleH1 = document.getElementsByTagName("h1");
+        console.log(titleH1);
+        titleH1[0].innerText= "다이어리";
+
+    </script>
+</body>
+</html>
