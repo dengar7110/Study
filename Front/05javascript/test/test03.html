@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03</title>
+</head>
+<body>
+    
+    <script>
+    // 1. 길이 제한
+    // 아이디의 글자 수 제한은 8글자이다.
+    // 아래 변수로 주어진 id 를 기준으로 제한 글자가 넘어 갔을 때, 아래와 같이 경고 문구와 8자로 자른 문자열을 alert으로 출력하세요.
+    let userid = "my_id_very_simple";
+    // 출력 예시
+    // id는 8자를 넘길 수 없습니다. my_id_ve
+
+    if(userid.length > 8){
+        console.log("id는 8자를 넘길 수 없습니다. " + userid.substring(0,8));
+    }
+
+    // 2. 파일 이름
+    // 파일 경로가 저장된 문자열이 있다.
+    // 해당 문자열에서 파일 이름을 추출하여 console 로 출력 하세요.
+    let path = "/Users/master/Document/image/city.jpg";
+    // 출력 예시
+
+    // city.jpg
+
+        let pathParts = path.split("/");
+        let lastIndex = pathParts.length - 1;
+        console.log(pathParts[lastIndex]);
+
+    // 3. 데이터 정리
+    // 아래와 같이 사용자가 입력한 내용을 dictionary 에 저장하였다.
+    let info = {
+        "name":"김 인규",
+        "phoneNumber":"01012345678",
+        "introduce":"    안녕하세요. 저는 기분이 좋네요.  "
+    };
+    // 해당 내용을 아래와 같은 형태로 출력하세요.
+    // 출력 예시
+    // 이름 : 김인규 전화번호 : 010-1234-5678 소개 : 안녕하세요. 저는 기분이 좋네요.
+
+    let replaceName = info.name.replace(" ", "");
+    let phoneNumber =  info.phoneNumber.substring(0,3) + "-" + info.phoneNumber.substring(3,7) + "-" + info.phoneNumber.substring(7);
+    let introduce = info.introduce.trim();
+
+    console.log("이름 : " + replaceName + " 전화번호 : " + phoneNumber + " 소개 : " + introduce)
+
+    // 4. 문자열 데이터
+    // 아래와 같이 특정한 규칙으로 회원의 이름과 생년월일이 문자열로 저장 되어 있다.
+    let membersString = "루피:19931005,조로:19890513,나미:19970705,쵸파:20040932";
+    // 문자열 함수를 사용해서 아래와 같은 형태의 데이터형으로 만들고 객체 그대로 console로 출력하세요.
+    // [
+    //     {name: "루피", birth: "19931005"}
+    //     {name: "조로", birth: "19890513"}
+    //     {name: "나미", birth: "19970705"}
+    //     {name: "쵸파", birth: "20040932"}
+    // ]
+    // (4) [{…}, {…}, {…}, {…}]
+    // 0: {name: "루피", birth: "19931005"}
+    // 1: {name: "조로", birth: "19890513"}
+    // 2: {name: "나미", birth: "19970705"}
+    // 3: {name: "쵸파", birth: "20040932"}
+    // length: 4
+
+    let membersStringArray = membersString.split(",");
+    console.log(membersStringArray);
+    // 루피:19931005
+    let memberArray = [];
+    for(let i = 0; i < membersStringArray.length; i++){
+        let memberInfoString = membersStringArray[i];
+        let memberInfoArray = memberInfoString.split(":");
+        let memberInfo = {"name":memberInfoArray[0],"birth":memberInfoArray[1]};
+        memberArray.push(memberInfo);
+    }
+
+    console.log(memberArray)
+
+    // 5. 생월 찾기
+    // 위 문제에서 만들어진 데이터를 이용해서 7월 생의 이름을 console로 출력하세요.
+    // 나미
+
+    for(let info of memberArray){
+        let month = info.birth.substring(4, 6);
+        if(month == 7){
+            console.log(info.name);
+        }
+    }
+
+
+    </script>
+</body>
+</html>
