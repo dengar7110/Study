@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 다양한 Event</title>
+</head>
+<body>
+
+    <h3>좋아하는 동물을 고르세요</h3>
+    <label><input type="radio" name="animal">개</label>
+    <label><input type="radio" name="animal" id="catInput">고양이</label>
+    <label><input type="radio" name="animal">사자</label>
+    <br>
+    <button type="button" id="checkCatBtn">고양이 선택</button>
+    <button tpye="button" id="cancelBtn">선택해제</button>
+
+    <h3>사이트 이동</h3>
+    <select id="siteSelect">
+        <option value="naver">네이버</option>
+        <option value="google">구글</option>
+        <option value="daum">다음</option>
+    </select>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#siteSelect").on("change", function() {
+                let site = $(this).val();
+                if(site == "naver"){
+                    // 페이지 이동
+                    location.href = "https://naver.com";
+                }else if(site == "google"){
+                    window.open = "https://google.com";
+                }else if(site == "daum"){
+                    location.href = "https://daum.net";
+                }
+            });
+
+            $("#cancelBtn").on("click", function() {
+                $("input[name='animal']").prop("checked", false);
+            });
+
+            $("#checkCatBtn").on("click", function() {
+                // 고양이 라디오 박스 선택
+                // $("#catInput").attr("checked", true);
+                // radio, checkbox, select
+                // checked, selected
+                $("#catInput").prop("checked", true);
+            });
+
+
+            $("input[name='animal']").on("change", function() {
+                // 선택된 동물 alert 로 띄우기
+                // let animal = $("input[name='animal']:checked").val();
+                let animal = $(this).val();
+                alert(animal);
+            });
+
+
+        });
+
+    </script>
+    
+</body>
+</html>
