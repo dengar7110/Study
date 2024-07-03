@@ -16,11 +16,36 @@
         <option value="green">녹색</option>
     </select>
 
+    <hr>
+
+    <h3>2. 입력 바꾸기</h3>
+    <label>학생<input type="radio" name="job" value="student" checked></label>
+    <label>직장인<input type="radio" name="job" value="worker"></label>
+    <div id="schoolInput">
+        <label>학교명</label><input type="text">
+    </div>
+    <div id ="companyInput" class="hidden">
+        <label>회사명</label><input type="text">
+    </div>
+
+    <hr>
+
+    <h3>3. 전체 선택</h3>
+    <label>전체선택<input type="checkbox" id="allCheck"></label> <br>
+    <label>개인정보 활용 동의<input type="checkbox" name="check"></label>
+    <label>서비스 이용 동의<input type="checkbox" name="check"></label>
+    <label>마케팅 활용 동의<input type="checkbox" name="check"></label>
+
+    <hr>
+
+    <h3>4. 길이 제한</h3>
+    <input type="text" id="textInput">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
 
+            // 1. 색 바꾸기
             $("#colorSelect").on("change", function() {
                 let color = $(this).val();
                 $("#box").css("background-color", color);
@@ -34,8 +59,44 @@
                 // }
 
             });
-   
 
+            // 2. 입력 바꾸기
+            $("input[name='job']").on("change", function() {
+                let job = $(this).val();
+                if(job == "student") {
+                    $("#schoolInput").show();
+                    $("#companyInput").hide();
+                } else {
+                    $("#companyInput").show();
+                    $("#schoolInput").hide();
+
+                }
+                
+            });
+   
+            // 3. 전체 선택
+            $("#allCheck").on("change", function() {
+
+                $("input[name='check']").prop("checked", $(this).is(":checked"));
+                // if($(this).is(":checked")) {
+                //     $("input[name='check']").prop("checked", true);
+                // } else {
+                //     $("input[name='check']").prop("checked", false);
+                // }
+            });
+
+            // 4. 길이 제한
+            $("#textInput").on("input", function() {
+                let text = $(this).val();
+                if(text.length > 5){
+                    alert("5자를 넘었어요!");
+                    $(this).val(text.substring(0, 5));
+                }
+            });
+
+    //  $("#textInput").input(function(){  // 같음 <=>  $("#textInput").on("input", function() {
+
+    //      });
 
 
         });
