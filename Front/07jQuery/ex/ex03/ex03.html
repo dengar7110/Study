@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부 라이브러리</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+</head>
+<body>
+    <label>날짜 선택 : </label> <input type="text" id="date">
+    <br>
+    <label>날짜 선택(옵션) : </label> <input type="text" id="dateOption">
+    <br>
+    <label>날짜 선택(이벤트) : </label> <input type="text" id="dateEvent">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#date").datepicker();
+
+            $("#dateOption").datepicker({
+                dateFormat:"yy년 m월 d일",
+                changeYear:true,
+                changeMonth:true
+            });
+
+            $("#dateEvent").datepicker({
+                dateFormat:"yy-mm-dd",
+                // 데이트피커가 보여지기 직전에 수행할 함수 등록
+                beforeShow:function() {
+                    alert("곧 피커가 뜹니다!");
+                },
+                // 데이트피커에서 날짜가 선택되었을때 수행할 함수 등록
+                onSelect:function(dateText) {
+                    alert("날짜가 선택되었습니다!" + dateText);
+                },
+                onClose:function(dateText) {
+                    alert("닫혔습니다!" + dateText);
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
