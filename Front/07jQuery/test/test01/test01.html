@@ -9,27 +9,29 @@
 <body>
     <div>
         <h1>1. 비밀번호 일치</h1>
-        <label>비밀번호 : <input type="password" id="password"></label>
-        <lable>비밀 번호 확인 : <input type="password" id="checkPassword"></lable>
-        <button type="button" id="checkBtn">확인</button>
+        <label>비밀번호 : </label><input type="password" id="passwordInput">
+        <label>비밀 번호 확인 : </label><input type="password" id="passwordConfirmInput">
+        <button type="button" id="confirmBtn">확인</button>
     </div>
     <hr>
     <div>
         <h1>2. 금칙어</h1>
-        <input type="text" id="banText">
-        <button type="button" id="banCheckBtn">검색</button>
+        <input type="text" id="searchInput">
+        <button type="button" id="searchBtn">검색</button>
     </div>
     <hr>
     <div>
         <h1>3. 더보기</h1>
         <button type="button" id="moreBtn">펼치기</button>
-        <div id="textBox">
-            <h1>추가 설명입니다 블라 블라</h1>
+        <div id="moreContents" class="more-contents">
+            추가 설명입니다 블라 블라
         </div>
     </div>
     <hr>
     <div>
         <h1>4. 사각형 바꾸기</h1>
+        <div class="box" id="box"></div>
+        <button type="button" id="changeBtn">교체</button>
 
     </div>
 
@@ -37,47 +39,62 @@
     <script>
         $(document).ready(function(){
             // 1.비밀번호 일치
-            $("#checkBtn").on("click", function() {
-                let password = $("#password").val();
-                let checkPassword =  $("#checkPassword").val();
-                if(password == "" ||  checkPassword == ""){
-                    alert("비밀번호를 입력해주세요")
+            $("#confirmBtn").on("click", function() {
+                let password = $("#passwordInput").val();
+                let passwordConfirm =  $("#passwordConfirmInput").val();
+
+                if(password == ""){
+                    alert("비밀번호를 입력해주세요");
+                    return;
                 }
 
-                if(password == checkPassword){
-                    alert("확인 완료");
-                }else {
+                if(password != passwordConfirm){
                     alert("비밀번호가 일치하지 않습니다.");
+                    return;
                 }
+                alert("확인완료");
             });
             
             //2. 금칙어 처리
-            let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
-
+            
             $("#banCheckBtn").on("click", function(){
-                let banText = $("#banText").val();
-                for(let i = 0; i < bannedWords.length; i++){
-                    if(bannedWords[i] == banText){
-                        alert("금칙어가 포함되어 있습니다. 검색할 수 없습니다.")
-                        return;
-                    }                     
+                let search = $("#searchInput").val();
+                let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
+                for(let word of bannedWords){
+                    if(search.includes(word)){
+                        alert("금칙어가 포함되어 있습니다. 검색할 수 없습니다.");
+                        break;
+                    }
                 }
-                alert(banText);
+
+
             });
 
             //3. 더보기
             $("#moreBtn").on("click", function() {
-                if($("#moreBtn").text() == "펼치기"){
-                    $("#moreBtn").text("닫기");
-                    $("#textBox").show();
 
-                }else{
-                    $("#moreBtn").text("펼치기");
-                    $("#textBox").hide();
+                if($("#moreContents").is(":visible")){
+                    $(this).text("더보기");
+                    $("#moreContents").hide();
+                }else {
+                    $(this).text("닫기");
+                    $("#moreContests").show();
                 }
                 
 
             });
+
+            //4. 사각형 바꾸기
+            $("#changeBtn").on("click", function(){
+                if($("box").hasClass("box")){
+                    $("#box").removeClass("box");
+                    $("box").addClass("big-box");
+                }else {
+                    $("#box").removeClass("big-box");
+                    $("#box").addClass("box");
+                }
+            });
+
 
         });
 
