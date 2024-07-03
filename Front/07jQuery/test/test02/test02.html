@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 다양한 이벤트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>1. 색 바꾸기</h3>
+    <div id ="box" class="box"></div>
+    <select id="colorSelect">
+        <option>--색선택--</option>
+        <option value="red">빨간색</option>
+        <option value="blue">파란색</option>
+        <option value="green">녹색</option>
+    </select>
 
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#colorSelect").on("change", function() {
+                let color = $(this).val();
+                $("#box").css("background-color", color);
+
+                // if(color == "blue"){
+                //     $("#box").css("background-color", "blue");
+                // }else if(color == "red"){
+                //     $("#box").css("background-color", "red");
+                // }else if(color == "green"){
+                //     $("#box").css("background-color", "green");
+                // }
+
+            });
+   
+
+
+
+        });
+
+    </script>
+</body>
+</html>
