@@ -32,8 +32,14 @@
         <h1>4. 사각형 바꾸기</h1>
         <div class="box" id="box"></div>
         <button type="button" id="changeBtn">교체</button>
-
     </div>
+
+    <hr>
+
+    <h3>5. 이미지 교체</h3>
+    <button type="button" id="prevBtn">이전</button>
+    <img id="image" width="200" src="https://cdn.pixabay.com/photo/2023/07/18/07/17/pineapple-8134236_1280.jpg" alt="사진">
+    <button type="button" id="nextBtn">다음</button>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
@@ -55,7 +61,7 @@
                 alert("확인완료");
             });
             
-            //2. 금칙어 처리
+            // 2. 금칙어 처리
             $("#banCheckBtn").on("click", function() {
                 let search = $("#searchInput").val();
                 let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
@@ -67,7 +73,7 @@
                 }
             });
 
-            //3. 더보기
+            // 3. 더보기
             $("#moreBtn").on("click", function() {
 
                 if($("#moreContents").is(":visible")){
@@ -81,7 +87,7 @@
 
             });
 
-            //4. 사각형 바꾸기
+            // 4. 사각형 바꾸기
             $("#changeBtn").on("click", function(){
                 if($("#box").hasClass("box")){
                     $("#box").removeClass("box");
@@ -92,6 +98,32 @@
                 }
             });
 
+            // 5. 이미지 교체
+            let imagePaths = [
+            "https://cdn.pixabay.com/photo/2023/07/18/07/17/pineapple-8134236_1280.jpg"
+            , "https://cdn.pixabay.com/photo/2024/02/06/13/33/flower-8557060_640.jpg"
+            , "https://cdn.pixabay.com/photo/2024/06/21/15/18/road-8844555_640.jpg"
+            , "https://cdn.pixabay.com/photo/2024/02/17/08/27/bird-8578905_640.jpg"
+            , "https://cdn.pixabay.com/photo/2022/11/10/00/57/lake-7581726_640.jpg"
+            ];
+
+            var currentIndex = 0;
+
+            $("#nextBtn").on("click", function() {
+                currentIndex++;
+                if(currentIndex == imagePaths.length){
+                    currentIndex = 0;
+                }
+                $("#image").attr("src", imagePaths[currentIndex]);
+            });
+
+            $("#prevBtn").on("click", function() {
+                currentIndex--;
+                if(currentIndex < 0){
+                    currentIndex = imagePaths.length-1;
+                }
+                $("#image").attr("src", imagePaths[currentIndex]);
+            });
 
         });
 
