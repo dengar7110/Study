@@ -1,0 +1,14 @@
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+header{
+    height: 80px;
+}
+.contents > .join-box {
+    width: 400px;
+    height: 550px;
+}
+footer{
+    height: 100px;
+}
