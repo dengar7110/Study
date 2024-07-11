@@ -11,7 +11,7 @@ SELECT * FROM `review`;
 -- 강동원	4
 -- 전지현	4
 
-
+ 
 SELECT `userName`, count(*) FROM `review` GROUP BY `userName`;
 
 -- 2. 그룹별 평균 구하기
