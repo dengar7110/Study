@@ -101,7 +101,8 @@ SELECT `weather`, count(*) AS `count` FROM `weatherhistory` GROUP BY `weather` O
 -- 좋음	0.6
 -- 나쁨	0.3
 
-SELECT `microDust`, format(avg(`precipitation`),1) AS `precipitation` FROM `weatherhistory` GROUP BY `microDust` HAVING `precipitation` > 0;
+SELECT `microDust`, avg(`precipitation`) AS `precipitation` FROM `weatherhistory` 
+GROUP BY `microDust` HAVING `precipitation` > 0;
 
 -- 6. 미세먼지 와 풍속
 -- 미세먼지 상태 별로 평균 풍속을 구하고 평균 풍속이 높은 순으로 조회하세요.
@@ -114,4 +115,5 @@ SELECT `microDust`, format(avg(`precipitation`),1) AS `precipitation` FROM `weat
 -- 나쁨	5.4
 -- 좋음	4.98
 
-SELECT `microDust`, format(avg(`windSpeed`),1) AS `windSpeed` FROM `weatherhistory` GROUP BY `microDust` HAVING avg(`windSpeed`) > 4.0 ORDER BY `windSpeed` DESC; 
+SELECT `microDust`, avg(`windSpeed`) AS `windSpeed` FROM `weatherhistory` 
+GROUP BY `microDust` HAVING `windSpeed` > 4.0 ORDER BY `windSpeed` DESC; 
