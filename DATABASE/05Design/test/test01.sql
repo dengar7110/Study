@@ -13,38 +13,43 @@
 -- 6	조세호	01011110000	mrjo@gmail.com	모델	2020	1	중간고사	수학	70
 -- 테이블 관리가 좀더 효율적이도록 테이블을 나누어서 설계하세요.
 
-CREATE TABLE `new_score` (
+CREATE TABLE `student` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(32) NOT NULL,
     `phoneNumber` VARCHAR(16) NOT NULL,
-    `email` VARCHAR(32) NOT NULL,
+    `email` VARCHAR(16) NOT NULL,
     `dreamJob` VARCHAR(16) NOT NULL,
     `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `score_score` (
+
+CREATE TABLE `new_score` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `userId` INT NOT NULL,
-    `year` CHAR(4) NOT NULL,
+    `studentId` INT NOT NULL, -- 외래키
+    `year` INT NOT NULL,
     `semester` TINYINT NOT NULL,
-    `term` VARCHAR(16) NOT NULL,
+    `term` CHAR(4) NOT NULL,
     `subject` VARCHAR(16) NOT NULL,
-    `score` INT NOT NULL,
+    `score` TINYINT NOT NULL,
     `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DESC `student`;
+DESC `new_score`;
+
 -- 2. Insert
 -- 위에 표에 표시된 데이터를 나누어진 테이블에 저장하세요.
 
-INSERT INTO `new_score`
+INSERT INTO `student`
 (`name`, `phoneNumber`, `email`, `dreamJob`)
 VALUES
 ('유재석', '01000001111', 'mc_u@naver.com', '프로그래머'),
 ('조세호', '01011110000', 'mrjo@gmail.com', '모델');
 
-INSERT INTO `score_score`
-(`userId`, `year`, `semester`, `term`, `subject`, `score`)
+INSERT INTO `new_score`
+(`studentId`, `year`, `semester`, `term`, `subject`, `score`)
 VALUES
 (1 ,'2020', 1, '중간고사', '국어', 80),
 (1 ,'2020', 1, '중간고사', '영어', 95),
@@ -53,15 +58,18 @@ VALUES
 (2 ,'2020', 1, '중간고사', '영어', 90),
 (2 ,'2020', 1, '중간고사', '수학', 70);
 
+SELECT * FROM `student`;
 SELECT * FROM `new_score`;
-SELECT * FROM `score_score`;
 
 -- 3. 성적 출력
 -- 조세호의 성적을 아래와 같은 형태로 조회하세요.
--- year	semester term subject	  score
--- 2020		1	중간고사	국어			85
--- 2020		1	중간고사	영어			90
--- 2020		1	중간고사	수학			70
+-- year	 semester term  subject	  score
+-- 2020		1	 중간고사   국어       85
+-- 2020		1	 중간고사   영어       90
+-- 2020		1	 중간고사   수학       70
 
-SELECT `year`, `semester`, `term`, `subject`, `score` FROM `score_score` WHERE `userId` = 2;
+-- 조세호의 primary key 값 조회
+SELECT * FROM `student` WHERE `name` = '조세호';
+-- studentId 값이 2인 행 조회
+SELECT `year`, `semester`, `term`, `subject`, `score` FROM `new_score` WHERE `studentId` = 2;
 
